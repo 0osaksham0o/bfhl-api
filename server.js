@@ -20,7 +20,7 @@ app.post('/bfhl', (req, res) => {
         let concat_string = '';
 
         data.forEach(item => {
-            if (/^\d+$/.test(item)) { // Check if item is a number (integer string)
+            if (/^\d+$/.test(item)) { 
                 let num = parseInt(item);
                 if (num % 2 === 0) {
                     even_numbers.push(item);
@@ -28,15 +28,15 @@ app.post('/bfhl', (req, res) => {
                     odd_numbers.push(item);
                 }
                 numbers_sum += num;
-            } else if (/^[a-zA-Z]+$/.test(item)) { // Alphabets only
+            } else if (/^[a-zA-Z]+$/.test(item)) { 
                 alphabets.push(item.toUpperCase());
                 concat_string += item;
-            } else { // Special Characters
+            } else { 
                 special_characters.push(item);
             }
         });
 
-        // Alternating Caps Reverse String
+        
         let reversedConcat = concat_string.split('').reverse();
         let finalConcat = '';
         reversedConcat.forEach((ch, idx) => {
